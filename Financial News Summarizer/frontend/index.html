@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financial News Summarizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>📰 CONTRACT ANALYSIS SYSTEM</h1>
+    <p class="subtitle">Paste a financial news article below and get an instant summary.</p>
+
+    <textarea id="articleInput" placeholder="Paste your contract here..."></textarea>
+
+    <button id="AnalysesBtn" onclick="Analyses()">Summarize</button>
+
+    <div id="loading" class="hidden">⏳ Generating summary, please wait...</div>
+
+    <div id="results" class="hidden">
+      <div class="result-box">
+        <h2>🔵 Extractive Analyses <span>(spaCy)</span></h2>
+        <p id="extractiveOutput"></p>
+      </div>
+      <div class="result-box">
+        <h2>🟢 Abstractive Analyses <span>(BART)</span></h2>
+        <p id="abstractiveOutput"></p>
+      </div>
+      <div class="result-box">
+        <h2>📊 ROUGE Scores</h2>
+        <pre id="rougeOutput"></pre>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
